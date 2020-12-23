@@ -14,7 +14,7 @@
                         <h3 class="mb-0">{{ $product->name }}</h3>
                         <div class="mb-1 text-muted">{{ $product->created_at->format('d/m/Y') }}</div>
                         <p class="card-text mb-auto"> {{ $product->description }} </p>
-                        <strong class="card-text mb-auto"> {{ $product->formatPrix() }}</strong>
+                        <strong class="card-text mb-auto"> {{ $product->formatPrice() }}</strong>
                         <a href=" {{ route('products.show', $product->slug) }} " class="stretched-link btn btn-info">Voir
                             l'article</a>
                     </div>
