@@ -21,7 +21,8 @@ class ProductsTableSeeder extends Seeder
                 "name" => $faker->word,
                 "slug" => $faker->sentence(3),
                 "description" => $faker->sentence(10),
-                "price" => $faker->numberBetween(100, 100000)
+                "price" => $faker->numberBetween(100, 100000),
+                "image" => "https://via.placeholder.com/225x275"
             ]);
         }
     }

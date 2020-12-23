@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('titre')
-    Afficher les products
+    Afficher les produits
 @endsection
 
 @section('content')
