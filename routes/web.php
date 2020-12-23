@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,11 @@ Route::get("/produits", [ProductController::class, 'index'])->name("products.ind
 Route::get("/produits/{slug}", [ProductController::class, 'show'])->name("products.show");
 
 // Panier
+Route::get("panier", [CartController::class, 'index'])->name("cart.index");
 Route::post("/panier/ajouter", [CartController::class, 'store'])->name("cart.store");
+Route::delete('/panier{rowId}', [CartController::class, 'destroy'])->name("cart.delete");
+
+Route::get("/videpanier", function () {
+    Cart::destroy();
+    return redirect()->route("products.index");
+});
