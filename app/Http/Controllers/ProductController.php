@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->paginate(30);
+        $products = Product::inRandomOrder()->paginate(15);
         return view("products.index", compact("products"));
     }
 
@@ -45,9 +45,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product = Product::where("slug", $slug)->firstOrFail();
+        return view("products.show")->with("product", $product);
     }
 
     /**

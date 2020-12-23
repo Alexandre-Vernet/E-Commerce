@@ -15,7 +15,9 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a class="text-muted" href="#">Subscribe</a>
+                    <button type="button" class="btn btn-primary">
+                        Panier <span class="badge badge-dark">4</span>
+                    </button>
                 </div>
                 <div class="col-4 text-center">
                     <a class="blog-header-logo text-dark" href=" {{ route('products.index') }} ">🛍 E-Commerce</a>
@@ -54,11 +56,9 @@
 
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
             <div class="col-md-6 px-0">
-                <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently
-                    about what's most interesting in this post's contents.</p>
-                <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+                <h1 class="display-4 font-italic">E-Commerce</h1>
+                <p class="lead my-3">Superbe E-Commerce développé sur Laravel</p>
+                <p class="lead mb-0"><a href="http://github.com/Alexandre-Vernet/" target="_blank" class="text-white font-weight-bold">Voir plus</a></p>
             </div>
         </div>
 
