@@ -30,7 +30,7 @@
                     </a>
                 </div>
                 <div class="col-4 text-center">
-                    <a class="blog-header-logo text-dark" href=" {{ route('products.index') }} ">🛍 E-Commerce</a>
+                    <a class="h1 text-dark text-decoration-none" href=" {{ route('products.index') }} ">🛍 E-Commerce</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <a class="text-muted" href="#">

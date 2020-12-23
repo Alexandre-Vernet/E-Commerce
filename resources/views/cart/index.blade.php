@@ -25,7 +25,7 @@
                 @foreach (Cart::content() as $product)
                     <tr>
                         <td><img src=" {{ $product->model->image }} " alt="product" style="height: 50px; width: 50px;"></td>
-                        <td> {{ $product->name }} </td>
+                        <td><a href=" {{ route('products.show', $product->model->slug) }} "> {{ $product->name }} </a></td>
                         <td class="text-success">En stock</td>
                         <td>
                             <div class="form-row">
