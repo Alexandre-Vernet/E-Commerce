@@ -13,12 +13,16 @@
                 <div class="card wish-list mb-4">
                     <div class="card-body">
 
+                        {{-- Count product in Cart --}}
                         @if (Cart::count() <= 0)
                             <h5 class="mb-4">Votre panier est vide</h5>
+                        @elseif(Cart::count() == 1)
+                            <h5 class="mb-4">Panier <span> ({{ Cart::count() }} </span> produit)</h5>
                         @else
                             <h5 class="mb-4">Panier <span> ({{ Cart::count() }} </span> produits)</h5>
                         @endif
 
+                        {{-- Display all products --}}
                         @foreach (Cart::content() as $product)
                             <div class="row mb-4">
                                 <div class="col-md-5 col-lg-3 col-xl-3">
@@ -66,7 +70,7 @@
                     </div>
                 </div>
 
-                {{-- Délais de livraison --}}
+                {{-- Delivery --}}
                 <div class="card mb-4">
                     <div class="card-body">
 
@@ -76,7 +80,7 @@
                     </div>
                 </div>
 
-                {{-- Nous acceptons --}}
+                {{-- We accept --}}
                 <div class="card mb-4">
                     <div class="card-body">
 
