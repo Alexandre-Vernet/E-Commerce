@@ -128,8 +128,11 @@
                             </li>
                         </ul>
 
-                        <a href=" {{ route('checkout.index') }} "
-                            class="btn btn-primary btn-block waves-effect waves-light">Passer commande</a>
+                        @if (Cart::count() > 0)
+                            <a href=" {{ route('checkout.index') }} "
+                                class="btn btn-primary btn-block waves-effect waves-light">Passer commande</a>
+                        @endif
+
                     </div>
                 </div>
             </div>
