@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('titre')
-    Afficher les produits
+    Commerce en Ligne
 @endsection
 
 @section('content')
@@ -31,5 +31,7 @@
         @endforeach
     </div>
 
-    {{ $products->links() }}
+    <div class="pagination justify-content-center">
+        {{ $products->links() }}
+    </div>
 @endsection

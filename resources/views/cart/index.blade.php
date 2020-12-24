@@ -22,7 +22,7 @@
                             <h5 class="mb-4">Panier <span> ({{ Cart::count() }} </span> produits)</h5>
                         @endif
 
-                        {{-- Display all products --}}
+                        {{-- Display all products in the Cart --}}
                         @foreach (Cart::content() as $product)
                             <div class="row mb-4">
                                 <div class="col-md-5 col-lg-3 col-xl-3">
@@ -116,7 +116,7 @@
                                 <span> {{ formatPrice(Cart::subtotal()) }} </span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                Taxe
+                                Taxes
                                 <span> {{ formatPrice(Cart::tax()) }} </span>
                             </li>
                             <li
@@ -128,7 +128,8 @@
                             </li>
                         </ul>
 
-                        <button type="button" class="btn btn-primary btn-block waves-effect waves-light">Payer</button>
+                        <a href=" {{ route('checkout.index') }} "
+                            class="btn btn-primary btn-block waves-effect waves-light">Passer commande</a>
                     </div>
                 </div>
             </div>

@@ -22,6 +22,7 @@
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="./css/mdb.ecommerce.min.css">
     <!-- Your custom styles (optional) -->
+    @yield('extras')
     
   
 
