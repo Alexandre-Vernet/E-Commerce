@@ -7,12 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titre')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     @yield('extras')
-    
-  
 
 </head>
 
@@ -24,12 +22,13 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a href=" {{ route('cart.index') }} " type="button" class="btn btn-primary">
-                        Panier <span class="badge badge-dark"> {{ Cart::count() }} </span>
+                    <a href=" {{ route('cart.index') }} " class="btn btn-dark">
+                        Panier <span class="badge bg-info"> {{ Cart::count() }} </span>
                     </a>
                 </div>
                 <div class="col-4 text-center">
-                    <a class="h1 text-dark text-decoration-none" href=" {{ route('products.index') }} ">🛍 E-Commerce</a>
+                    <a class="h1 text-dark text-decoration-none" href=" {{ route('products.index') }} ">🛍
+                        E-Commerce</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <a class="text-muted" href="#">
@@ -80,7 +79,8 @@
         {{-- Footer --}}
         <footer class=" text-center p-5 bg-light">
             <div class="container">
-                <p><a href="http://github.com/Alexandre-Vernet" target="_blank">Alexandre Vernet</a> - 🛒 E-Commerce - Laravel 7.3</p>
+                <p><a href="http://github.com/Alexandre-Vernet" target="_blank">Alexandre Vernet</a> - 🛒 E-Commerce -
+                    Laravel 7.3</p>
             </div>
         </footer>
     </div>
