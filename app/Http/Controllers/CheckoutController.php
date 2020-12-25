@@ -25,6 +25,9 @@ class CheckoutController extends Controller
         $intent = PaymentIntent::create([
             'amount' => round(Cart::total()),
             'currency' => 'eur',
+            'metadata' => [
+                'userId' => 15
+            ]
         ]);
 
         $clientSecret = Arr::get($intent, 'client_secret');
@@ -52,7 +55,12 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Clear Cart
+        Cart::destroy();
+
+        $data = $request->json()->all();
+
+        return $data['paymentIntent'];
     }
 
     /**

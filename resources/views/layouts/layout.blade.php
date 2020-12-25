@@ -8,20 +8,8 @@
     <title>@yield('titre')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- MDB eCommerce core CSS -->
-    <link rel="stylesheet" href="css/mdb-ecommerce.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="./css/mdb-pro.min.css">
-    <!-- Material Design Bootstrap Ecommerce -->
-    <link rel="stylesheet" href="./css/mdb.ecommerce.min.css">
-    <!-- Your custom styles (optional) -->
     @yield('extras')
     
   

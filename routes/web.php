@@ -22,6 +22,7 @@ Route::get("/", [ProductController::class, 'index'])->name("products.index");
 Route::get("/produits", [ProductController::class, 'index'])->name("products.index");
 Route::get("/produits/{slug}", [ProductController::class, 'show'])->name("products.show");
 
+
 //Cart
 Route::get("panier", [CartController::class, 'index'])->name("cart.index");
 Route::post("/panier/ajouter", [CartController::class, 'store'])->name("cart.store");
@@ -35,3 +36,7 @@ Route::get("/videpanier", function () {
 
 // Checkout
 Route::get('/paiement', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/paiment', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('/merci', function () {
+    return view('checkout.thanks');
+});

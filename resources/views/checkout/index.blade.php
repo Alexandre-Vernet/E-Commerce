@@ -2,9 +2,12 @@
 @section('titre')
     Paiement
 @endsection
+
 @section('extras')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+
 
     <style>
         /* Variables */
@@ -13,7 +16,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            /* font-family: -apple-system, sans-serif; */
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
             display: flex;
@@ -195,13 +198,14 @@
 @section('content')
     <h1>Paiement</h1>
     <div class="col-md-6">
-        <form id="payment-form">
+        <form action=" {{ route('checkout.store') }} " method="POST" id="payment-form">
+            @csrf
             <div id="card-element">
                 <!--Stripe.js injects the Card Element-->
             </div>
             <button id="submit">
                 <div class="spinner hidden" id="spinner"></div>
-                <span id="button-text">Procéder au paiement</span>
+                <span id="button-text">Procéder au paiement ({{ formatPrice(Cart::total()) }}) </span>
             </button>
             <p id="card-error" role="alert"></p>
             <p class="result-message hidden">
@@ -276,10 +280,39 @@
                         showError(result.error.message);
                     } else {
                         // The payment succeeded!
+
+                        var paymentIntent = result.paymentIntent;
+                        var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                        var form = document.getElementById("payment-form");
+                        var url = form.action;
+                        var redirect = '/merci';
+
+                        fetch(
+                            url, {
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json, text-plain, */*",
+                                    "X-Requested-With": "XMLHttpRequest",
+                                    "X-CSRF-TOKEN": token
+                                },
+                                method: "post",
+                                body: JSON.stringify({
+                                    paymentIntent: paymentIntent
+                                })
+                            }).then((data) => {
+                            console.log(data)
+                            window.location.href = redirect;
+                        }).catch((error) => {
+                            console.log(error);
+                        })
+
                         orderComplete(result.paymentIntent.id);
                     }
                 });
         };
+
+
+
 
 
         /* ------- UI helpers ------- */
@@ -306,6 +339,7 @@
                 errorMsg.textContent = "";
             }, 4000);
         };
+
 
 
         // Show a spinner on payment submission
