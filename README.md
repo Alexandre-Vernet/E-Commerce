@@ -43,3 +43,29 @@ Lorsqu'un produit a été ajouté au panier, un message apparaît.
 
 ## Panier
 Lorsqu'un produit est ajouté au panier, une icone apparaît avec la quantité de produit présente dans le panier sur le bouton "panier". 
+En cliquant sur ce bouton, la liste de nos produits s'affiche avec la possibilité d'ajuster la quantité.
+
+![afficher_panier](https://user-images.githubusercontent.com/72151831/106764945-95103080-6638-11eb-9fe3-19d67332d7b6.png)
+
+
+## Paiement
+En cliquant sur le bouton "procéder au paiement", une page s'affiche en demandant les coordonnées bancaires à l'utilisateur.
+
+![paiement](https://user-images.githubusercontent.com/72151831/106765178-d1dc2780-6638-11eb-9817-d073214a6391.png)
+
+
+En cas de paiement réussi, un message de succès apparait
+
+![paiement_en_cours](https://user-images.githubusercontent.com/72151831/106765258-e6202480-6638-11eb-9bb5-1701514e2ac8.png)
+
+
+![paiement_accepte](https://user-images.githubusercontent.com/72151831/106765248-e28c9d80-6638-11eb-934e-dea2acba168e.png)
+
+
+Si le paiement échoue (carte expiré, plafond insuffisant, CVC incorrect ...), l'API Stripe détecte ces problèmes et affiche un message en conséquent.
+
+![paiement_carte_expire](https://user-images.githubusercontent.com/72151831/106765458-1c5da400-6639-11eb-9850-df8a29442c1a.png)
+
+
+![paiement_refuse_cvc](https://user-images.githubusercontent.com/72151831/106765917-9beb7300-6639-11eb-8dae-9f69c33149a8.png)
+
