@@ -1,61 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# E-Commerce
+Commerce en ligne développé sous Laravel 7.30.4 et avec l'API Stripe.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Par Alexandre Vernet
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![shop](https://user-images.githubusercontent.com/72151831/106770283-1ae2aa80-663e-11eb-9d64-bfafb738316a.png)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Accueil
+La page d'accueil propose une liste aléatoire de produits au client.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![accueil](https://user-images.githubusercontent.com/72151831/106763584-444c0800-6637-11eb-8818-41fb644a0288.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Les produits s'affichent sous forme de carte avec une pagination automatique.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![produits](https://user-images.githubusercontent.com/72151831/106764192-d94f0100-6637-11eb-85ee-3d10a61c803f.png)
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+## Produits
+En cliquant sur un produit, une description plus détaillée du produit s'affiche ainsi que la possibilité d'ajouter ce produit au panier 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![description_produit](https://user-images.githubusercontent.com/72151831/106763986-ad338000-6637-11eb-91b0-bcea17a21e13.png)
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Lorsqu'un produit a été ajouté au panier, un message apparaît.
 
-## Security Vulnerabilities
+![ajouter_panier](https://user-images.githubusercontent.com/72151831/106764575-31860300-6638-11eb-88b2-d38f053791d6.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Panier
+Lorsqu'un produit est ajouté au panier, une icone apparaît avec la quantité de produit présente dans le panier sur le bouton "panier". 
+En cliquant sur ce bouton, la liste de nos produits s'affiche avec la possibilité d'ajuster la quantité.
+
+![afficher_panier](https://user-images.githubusercontent.com/72151831/106764945-95103080-6638-11eb-9fe3-19d67332d7b6.png)
+
+
+
+## Paiement
+En cliquant sur le bouton "procéder au paiement", une page s'affiche en demandant les coordonnées bancaires à l'utilisateur
+
+![paiement](https://user-images.githubusercontent.com/72151831/106765178-d1dc2780-6638-11eb-9817-d073214a6391.png)
+
+
+En cas de paiement réussi, un message de succès apparait
+
+![paiement_en_cours](https://user-images.githubusercontent.com/72151831/106765258-e6202480-6638-11eb-9bb5-1701514e2ac8.png)
+
+
+![paiement_accepte](https://user-images.githubusercontent.com/72151831/106765248-e28c9d80-6638-11eb-934e-dea2acba168e.png)
+
+
+Si le paiement échoue (carte expiré, plafond insuffisant, CVC incorrect ...), l'API Stripe détecte ces problèmes et affiche un message en conséquent
+
+![paiement_carte_expire](https://user-images.githubusercontent.com/72151831/106765458-1c5da400-6639-11eb-9850-df8a29442c1a.png)
+
+
+![paiement_refuse_cvc](https://user-images.githubusercontent.com/72151831/106765917-9beb7300-6639-11eb-8dae-9f69c33149a8.png)
+
+
+L'API est également capable de reconnaître l'authentification à 2 facteurs
+
+![paiement_3D_secure](https://user-images.githubusercontent.com/72151831/106766110-d2c18900-6639-11eb-80ec-d8e8d97505d6.png)
+
