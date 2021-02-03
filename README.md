@@ -15,3 +15,10 @@ Par Alexandre Vernet
 - Afficher son panier
 - Procéder au paiement avec Stripe
 - Pagination
+
+
+
+## Page d'accueil
+
+
+![accueil](https://user-images.githubusercontent.com/72151831/106763584-444c0800-6637-11eb-8818-41fb644a0288.png)
