@@ -1,20 +1,10 @@
 # E-Commerce
-Commerce en ligne développé sous Laravel 7.30.4 et avec l'API Stripe
+Commerce en ligne développé sous Laravel 7.30.4 et avec l'API Stripe.
 
 Par Alexandre Vernet
 
 
 ![shop](https://user-images.githubusercontent.com/72151831/106760792-71e38200-6634-11eb-8fa2-d58b2263856c.png)
-
-
-
-## Fonctionnalité
-- Proposition aléatoire de produits
-- Visualiser la description d'un produit
-- Ajout d'un produit au panier
-- Afficher son panier
-- Procéder au paiement avec Stripe
-- Pagination automatique
 
 
 
@@ -27,6 +17,7 @@ La page d'accueil propose une liste aléatoire de produits au client.
 Les produits s'affichent sous forme de carte avec une pagination automatique.
 
 ![produits](https://user-images.githubusercontent.com/72151831/106764192-d94f0100-6637-11eb-85ee-3d10a61c803f.png)
+
 
 
 ## Produits
@@ -48,8 +39,9 @@ En cliquant sur ce bouton, la liste de nos produits s'affiche avec la possibilit
 ![afficher_panier](https://user-images.githubusercontent.com/72151831/106764945-95103080-6638-11eb-9fe3-19d67332d7b6.png)
 
 
+
 ## Paiement
-En cliquant sur le bouton "procéder au paiement", une page s'affiche en demandant les coordonnées bancaires à l'utilisateur.
+En cliquant sur le bouton "procéder au paiement", une page s'affiche en demandant les coordonnées bancaires à l'utilisateur
 
 ![paiement](https://user-images.githubusercontent.com/72151831/106765178-d1dc2780-6638-11eb-9817-d073214a6391.png)
 
@@ -62,10 +54,15 @@ En cas de paiement réussi, un message de succès apparait
 ![paiement_accepte](https://user-images.githubusercontent.com/72151831/106765248-e28c9d80-6638-11eb-934e-dea2acba168e.png)
 
 
-Si le paiement échoue (carte expiré, plafond insuffisant, CVC incorrect ...), l'API Stripe détecte ces problèmes et affiche un message en conséquent.
+Si le paiement échoue (carte expiré, plafond insuffisant, CVC incorrect ...), l'API Stripe détecte ces problèmes et affiche un message en conséquent
 
 ![paiement_carte_expire](https://user-images.githubusercontent.com/72151831/106765458-1c5da400-6639-11eb-9850-df8a29442c1a.png)
 
 
 ![paiement_refuse_cvc](https://user-images.githubusercontent.com/72151831/106765917-9beb7300-6639-11eb-8dae-9f69c33149a8.png)
+
+
+L'API est également capable de reconnaître l'authentification à 2 facteurs
+
+![paiement_3D_secure](https://user-images.githubusercontent.com/72151831/106766110-d2c18900-6639-11eb-80ec-d8e8d97505d6.png)
 
